@@ -1,4 +1,4 @@
-var fun = (a,b,c,d)=>(a>b?(a>c? (a>d?a:d):(c>d?c:d)):(b>c?(b>d?b:d):(c>d?c:d)))
+var max = (a,b,c,d)=>(a>b?(a>c? (a>d?a:d):(c>d?c:d)):(b>c?(b>d?b:d):(c>d?c:d)))
 undefined
 fun(1,2,3,4)
 //4
