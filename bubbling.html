@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bubbling Example</title>
+    <style>
+        #outer {
+            height: 300px;
+            border: 2px solid black;
+            background-color: white;
+        }
+        
+        #inner {
+            height: 150px;
+            border: 2px solid red;
+            width: 80%;
+            margin: 0px 10% 0px 10%;
+            background-color: white;
+        }
+        
+        #para {
+            height: 50px;
+            text-align: center;
+            border: 2px solid green;
+            width: 80%;
+            margin: 0px 10% 0px 10%;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <p id="para"> click me</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var outerdiv = document.getElementById('outer');
+        var innerdiv = document.getElementById('inner');
+        var para = document.getElementById('para');
+
+        function delayExecution(milliseconds) {
+            var x = new Date().getTime();
+            while (new Date().getTime() - x < milliseconds) {};
+        }
+
+        var arr = [outerdiv, innerdiv, para];
+        arr.forEach(x => {
+                x.onclick = function() {
+                    this.style.backgroundColor = 'green';
+                    delayExecution(200);
+                    this.style.backgroundColor = '';
+                }
+            })
+            /*
+            outerdiv.onclick = function() {
+                outerdiv.style.backgroundColor = "green";
+                delayExecution(200);
+                setTimeout(() => outerdiv.style.backgroundColor = "", 200);
+            }
+            innerdiv.onclick = function() {
+                innerdiv.style.backgroundColor = "green";
+                delayExecution(200);
+                setTimeout(() => innerdiv.style.backgroundColor = "", 200);
+            }
+            para.onclick = function() {
+                para.style.backgroundColor = "green";
+                delayExecution(200);
+                setTimeout(() => para.style.backgroundColor = "", 0);
+            }
+            */
+    </script>
+</body>
+
+</html>
