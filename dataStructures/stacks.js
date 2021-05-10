@@ -17,3 +17,5 @@ function Stack(){
 		else return false;
 	};
 };
+
+var stck = new Stack();
